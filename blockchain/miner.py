@@ -21,7 +21,7 @@ def proof_of_work(last_proof):
     """
 
     start = timer()
-    old_proof = f"{last_proof}"".encode()
+    old_proof = f"{last_proof}".encode()
     old_proof_hash = hashlib.sha256(old_proof).hexdigest()
     print("Searching for next proof")
     proof = 0
