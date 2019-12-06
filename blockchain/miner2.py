@@ -21,8 +21,7 @@ def proof_of_work(last_proof):
     """
 
     start = timer()
-    old_proof = f"{last_proof}".encode()
-    old_proof_hash = hashlib.sha256(old_proof).hexdigest()
+    old_proof_hash = hashlib.sha256(f"{last_proof}".encode()).hexdigest()
     print("Searching for next proof")
     proof = 0
     #  TODO: Your code here
@@ -46,9 +45,8 @@ def valid_proof(last_hash, proof):
     """
 
     # TODO: Your code here!
-    guess = f"{proof}".encode()
-    guess_hash = hashlib.sha256(guess).hexdigest()
-    return guess_hash[:6] == last_hash[6:]
+    guess_hash = hashlib.sha256(f"{proof}".encode()).hexdigest()
+    return guess_hash[:6] == last_hash[-6:]
 
 
 if __name__ == '__main__':
